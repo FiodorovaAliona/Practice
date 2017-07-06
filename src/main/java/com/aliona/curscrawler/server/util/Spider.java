@@ -5,6 +5,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URI;
@@ -46,10 +47,21 @@ public class Spider {
         return response;
     }
 
-    public String getPageWithDOM(){
-        String s = this.getPageByURL("http://www.curs.md/ru") ;
-        return s;
-        Document doc = Jsoup.parse(s);
+   public String getPageWithDOM() {
+       String s = this.getPageByURL("http://www.curs.md/ru");
+      Document doc;
+       try {
+           doc = Jsoup.parse(s);
+       Element x = doc.getElementById("tabelValute");
+       Elements tds = x.getElementsByTag("td");
+       String table;
+       for (Element td : tds) {
+           System.out.println("\n" + td.text());
+       }
+   } catch (Exception e) {
+        e.printStackTrace();
     }
+        return s;
+        }
 
 }
