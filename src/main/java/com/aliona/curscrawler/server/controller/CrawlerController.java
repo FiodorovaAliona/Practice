@@ -18,7 +18,7 @@ public class CrawlerController {
     public static String getPageByURL(String requestURL){
 
         Spider a = new Spider ();
-        String s = a.getPageByURL("http://www.curs.md/ru") ;
+        String s = a.getPageWithDOM() ;
         return s;
     }
 }

@@ -1,4 +1,5 @@
 package com.aliona.curscrawler.server.util;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,7 +20,7 @@ import static org.jsoup.nodes.Document.OutputSettings.Syntax.html;
 
 public class Spider {
 
-        public static String getPageByURL(String requestURL) {
+    public static String getPageByURL(String requestURL) {
         URL url;
         String response = "";
         System.out.println("Get: " + requestURL);
@@ -47,21 +48,22 @@ public class Spider {
         return response;
     }
 
-   public String getPageWithDOM() {
-       String s = this.getPageByURL("http://www.curs.md/ru");
-      Document doc;
-       try {
-           doc = Jsoup.parse(s);
-       Element x = doc.getElementById("tabelValute");
-       Elements tds = x.getElementsByTag("td");
-       String table;
-       for (Element td : tds) {
-           System.out.println("\n" + td.text());
-       }
-   } catch (Exception e) {
-        e.printStackTrace();
-    }
-        return s;
+    public String getPageWithDOM() {
+        String s = this.getPageByURL("http://www.curs.md/ru");
+        Document doc;
+        String table = "";
+        try {
+            doc = Jsoup.parse(s);
+            Element x = doc.getElementById("tabelValute");
+            Elements tds = x.getElementsByTag("td");
+            for (Element td : tds) {
+                System.out.println("\n" + td.text());
+                table = "\n" + td.text();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        return table;
+    }
 
 }
