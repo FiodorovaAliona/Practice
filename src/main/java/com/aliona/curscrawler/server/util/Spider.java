@@ -49,7 +49,7 @@ public class Spider {
     }
 
     public String getPageWithDOM() {
-        String s = this.getPageByURL("http://www.curs.md/ru");
+        String s = this.getPageByURL("http://www.curs.md/en");
         Document doc;
         String table = "";
         try {
@@ -58,7 +58,7 @@ public class Spider {
             Elements tds = x.getElementsByTag("td");
             for (Element td : tds) {
                 System.out.println("\n" + td.text());
-                table = "\n" + td.text();
+                table += "\n" + td.text();
             }
         } catch (Exception e) {
             e.printStackTrace();
