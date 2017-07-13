@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="curscrawlerdb@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="curscrawlerdb">
+      <ObjectId>16384</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-07-12.22:57:03.238</IntrospectionTimestamp>
+      <IntrospectionStateNumber>597</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <table id="9" parent="3" name="course">
+      <ObjectId>16410</ObjectId>
+      <StateNumber>597</StateNumber>
+    </table>
+    <column id="10" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="11" parent="9" name="cource_date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="12" parent="9" name="currency_name">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="13" parent="9" name="percent">
+      <Position>4</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="14" parent="9" name="rate">
+      <Position>5</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="15" parent="9" name="symbol">
+      <Position>6</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <column id="16" parent="9" name="variation">
+      <Position>7</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>597</StateNumber>
+    </column>
+    <index id="17" parent="9" name="course_pkey">
+      <ObjectId>16413</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="18" parent="9" name="course_pkey">
+      <ObjectId>16414</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>course_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
